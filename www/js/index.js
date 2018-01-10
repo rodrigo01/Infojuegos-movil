@@ -35,8 +35,6 @@ var app = {
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
 
-        var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
-
         var push = PushNotification.init({ "android": {"senderID": "1:545546457695:android:f45966a7204f4b3c"} });
             push.on('registration', function(data) {
             // data.registrationId
@@ -51,6 +49,10 @@ var app = {
             push.on('error', function(e) {
             // e.message
             });
+
+        //var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
+
+
 
        
     },
