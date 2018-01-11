@@ -122,6 +122,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <platform name="android">
-      <preference name="phonegap-version" value="7.0.1" />
+      <preference name="phonegap-version" value="6.2.3" />
     </platform>
 </widget>
