@@ -34,7 +34,6 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
-        if (typeof PushNotification !== 'undefined') {
             var push = PushNotification.init({
                 android: {
                 },
@@ -68,9 +67,7 @@ var app = {
                 alert(e.message);
                 //DevExpress.ui.notify(e.message, "error", 10000);
             });
-}else{
-    alert("No furula");
-}
+
 
         //var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
 
