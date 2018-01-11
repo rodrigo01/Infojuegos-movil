@@ -34,7 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
-            var push = PushNotification.init({ "android": {"senderID": "1:545546457695:android:f45966a7204f4b3c"}, "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+            var push = PushNotification.init({ "android": {"senderID": "545546457695"}, "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
             push.on('registration', function (data) {
                 // data.registrationId
                 alert(data.registrationId)
