@@ -34,47 +34,41 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
-
-        var push = PushNotification.init({
-          "android": {
-            "senderID": "1:545546457695:android:f45966a7204f4b3c"
-          },
-          "browser": {},
-          "ios": {
-            "sound": true,
-            "vibration": true,
-            "badge": true
-          },
-          "windows": {}
-        });
-
-        push.on('registration', function(data) {
-          console.log('registration event: ' + data.registrationId);
-
-          var oldRegId = localStorage.getItem('registrationId');
-          if (oldRegId !== data.registrationId) {
-            // Save new registration ID
-            localStorage.setItem('registrationId', data.registrationId);
-            // Post registrationId to your app server as the value has changed
-          }
-
-          var parentElement = document.getElementById('registration');
-          var listeningElement = parentElement.querySelector('.waiting');
-          var receivedElement = parentElement.querySelector('.received');
-
-          listeningElement.setAttribute('style', 'display:none;');
-          receivedElement.setAttribute('style', 'display:block;');
-        });
-
-        push.on('notification', function(data) {
-          console.log('notification event');
-          navigator.notification.alert(
-            data.message,         // message
-            null,                 // callback
-            data.title,           // title
-            'Ok'                  // buttonName
-          );
-        });
+        if (typeof PushNotification !== 'undefined') {
+            var push = PushNotification.init({
+                android: {
+                },
+                ios: {
+                    alert: "true",
+                    badge: "true",
+                    sound: "true",
+                    clearBadge: "true"
+                },
+                windows: {}
+            });
+            push.on('registration', function (data) {
+                // data.registrationId
+                alert(data.registrationId)
+                //DevExpress.ui.notify("Device registered " + data.registrationId, "success", 3000);
+            });
+            push.on('notification', function (data) {
+                // data.message,
+                // data.title,
+                // data.count,
+                // data.sound,
+                // data.image,
+                // data.additionalData
+                // mostra la notifica se l'app è aperta
+                alert(data.message);
+                //DevExpress.ui.notify(data.message, "info", 10000);
+            });
+            push.on('error', function (e) {
+                // e.message
+                // sarà da togliere, utilissimo in fase di debug
+                alert(e.message);
+                DevExpress.ui.notify(e.message, "error", 10000);
+            });
+}
 
         var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
 
