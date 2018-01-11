@@ -69,7 +69,7 @@ var app = {
             });
 
 
-        //var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
+        var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
 
 
 
