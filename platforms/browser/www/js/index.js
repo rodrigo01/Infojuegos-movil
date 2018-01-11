@@ -66,11 +66,13 @@ var app = {
                 // e.message
                 // sarà da togliere, utilissimo in fase di debug
                 alert(e.message);
-                DevExpress.ui.notify(e.message, "error", 10000);
+                //DevExpress.ui.notify(e.message, "error", 10000);
             });
+}else{
+    alert("No furula");
 }
 
-        var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
+        //var ref = window.open('https://www.info-juego.es/v2/', '_blank', 'location=no,zoom=no,toolbar=no');
 
 
 
