@@ -36,6 +36,7 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
+        var ref = window.open('https://m.info-juego.es/', '_blank', 'location=no,zoom=no,toolbar=no');
     },
     setupPush: function() {
         console.log('calling push init');
