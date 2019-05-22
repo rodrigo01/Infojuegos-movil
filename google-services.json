@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "501589253312",
+    "firebase_url": "https://chistesborrachos-f8364.firebaseio.com",
+    "project_id": "chistesborrachos-f8364",
+    "storage_bucket": "chistesborrachos-f8364.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501589253312:android:d01fb8a20dd08da5",
+        "android_client_info": {
+          "package_name": "com.cronpixel.chistesborrachos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501589253312-sqcstnd7p5fn6kmv0n38fiqomlrlfms5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsV2lzNoTbJlsPcPPKovNIG-qJpQ1hPK8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

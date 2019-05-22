@@ -19,25 +19,61 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
+
     // deviceready Event Handler
     //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
+    // Bind any cordova events here. Common events are:
+    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        //app.receivedEvent('deviceready');
+        window.location.replace("https://m.info-juego.es/");
+        this.receivedEvent('deviceready');
 
-        var ref = window.open('http://m.info-juego.es/', '_blank', 'location=no,zoom=no,toolbar=no');
+        // Set AdMobAds options:
+        admob.setOptions({
+            publisherId:          "ca-app-pub-9562640839848792/6622809054",  // Required
+            tappxShare:           0                                        // Optional
+        });
+        admob.createBannerView();
+        admob.showBannerAd(true);
 
-       
+        document.addEventListener("backbutton", onBackKeyDown, false)1
+
     },
-    
+
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        /*console.log('Received Event: ' + id);
+        var push = PushNotification.init({
+            android: {
+            },
+            ios: {
+                alert: "true",
+                badge: true,
+                sound: 'false'
+            }
+        });
+
+        push.on('registration', function (data) {
+            console.log(data.registrationId);
+            console.log(data.registrationType);
+            document.getElementById("registration").appendChild(document.createTextNode(data.registrationId));
+        });
+
+        push.on('notification', function (data) {
+            var ul = document.getElementById("pushList");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(data.message));
+            ul.appendChild(li);
+            console.log(data.message);
+            console.log(data.title);
+            console.log(data.count);
+            console.log(data.sound);
+            console.log(data.image);
+            console.log(data.additionalData);
+        });*/
+    }
 };
+
+app.initialize();
